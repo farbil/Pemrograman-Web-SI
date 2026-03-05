@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  # Mesin 1: Web Server (Apache + PHP)
+  web:
+    build: . # Merujuk pada file Dockerfile
+    ports:
+    - "8080:80"
+    volumes:
+      # Expose htdocs ke host
+      - ./htdocs:/var/www/html
+    depends_on:
+    - db
