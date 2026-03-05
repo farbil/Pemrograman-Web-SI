@@ -11,3 +11,16 @@ services:
       - ./htdocs:/var/www/html
     depends_on:
     - db
+
+  # Mesin 2: Database Server (MySQL)
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: farrel
+      MYSQL_DATABASE: hello_db
+    ports:
+    - "3307:3306"
+    volumes:
+     # Expose /var/lib/mysql ke host
+    - ./mysql-data:/var/lib/mysql
+
