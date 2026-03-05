@@ -24,3 +24,12 @@ services:
      # Expose /var/lib/mysql ke host
     - ./mysql-data:/var/lib/mysql
 
+  # Mesin 3: phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+    - "8081::80"
+    environment:
+      PNA_HOST: db
+    depends_on:
+    - db
