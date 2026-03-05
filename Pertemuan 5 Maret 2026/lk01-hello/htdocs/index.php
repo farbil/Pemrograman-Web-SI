@@ -3,7 +3,7 @@ $host = 'db';
 $user = 'root';
 $pass = 'farrel';
 $db_name = 'hello_db';
-$conn = new mysql($host, $user, $pass, $db_name);
+$conn = new mysqli($host, $user, $pass, $db_name);
 if ($conn->connect_error) {
     die("<h2>Koneksi DB lu Gagal: " . $conn->connect_error . "</h2>");
 }

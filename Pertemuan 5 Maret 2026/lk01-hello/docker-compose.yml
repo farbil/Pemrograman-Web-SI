@@ -1,4 +1,4 @@
-version: '3.8'
+# version: '3.8' --> ini ga perlu lagi di docker versi terbaru
 
 services:
   # Mesin 1: Web Server (Apache + PHP)
@@ -30,6 +30,6 @@ services:
     ports:
     - "8081:80"
     environment:
-      PNA_HOST: db
+      PMA_HOST: db
     depends_on:
     - db
