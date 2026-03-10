@@ -9,4 +9,7 @@ if ($conn->connect_error) {
 }
 echo "<h1>Hello World!</h1>";
 echo "<p>Database MySQL di Docker terhubung</p>";
+
+$name = "Farrel";
+echo "Hi, {$name} ya"
 ?>
