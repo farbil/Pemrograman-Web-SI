@@ -1,3 +1,4 @@
+<?php
 class Admin extends Model { 
  
     public function login($username, $password) { 

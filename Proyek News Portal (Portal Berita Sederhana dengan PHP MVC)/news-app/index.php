@@ -1,3 +1,4 @@
+<?php
 require "config/Database.php";
 require "core/Model.php";
 require "core/Controller.php";
@@ -19,3 +20,4 @@ switch($action) {
     case 'setLang': (new HomeController())->setLang(); break;
     default: (new HomeController())->index(); break;
 }
+?>

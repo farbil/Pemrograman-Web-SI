@@ -1,3 +1,4 @@
+<?php
 class BeritaController extends Controller { 
  
     private function checkAuth() { 

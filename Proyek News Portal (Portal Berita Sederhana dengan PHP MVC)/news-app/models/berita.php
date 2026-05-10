@@ -1,3 +1,4 @@
+<?php
 class Berita extends Model { 
  
     public function all() { 
