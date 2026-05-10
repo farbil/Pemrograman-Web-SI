@@ -1,0 +1,33 @@
+services:
+  # Mesin 1: Web Server (Apache + PHP)
+  web:
+    build: . # Merujuk pada file Dockerfile
+    ports:
+    - "8080:80"
+    volumes:
+      # Expose folder news-app ke host
+      - ./news-app:/var/www/html
+    depends_on:
+    - db
+
+  # Mesin 2: Database Server (MySQL)
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: gakadapw
+      MYSQL_DATABASE: news_app
+    ports:
+    - "3307:3306"
+    volumes:
+     # Expose /var/lib/mysql ke host
+    - ./mysql-data:/var/lib/mysql
+
+  # Mesin 3: phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+    - "8081:80"
+    environment:
+      PMA_HOST: db
+    depends_on:
+    - db
